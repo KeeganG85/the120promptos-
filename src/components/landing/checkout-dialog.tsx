@@ -20,6 +20,8 @@ export function CheckoutDialog() {
   const hydrate = useCheckout((s) => s.hydrate);
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
+  const [businessName, setBusinessName] = useState("");
+  const [businessDoes, setBusinessDoes] = useState("");
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
 
@@ -33,28 +35,28 @@ export function CheckoutDialog() {
       toast.error("Please confirm you want instant access to Prompt OS.");
       return;
     }
-    complete({ firstName, email });
+    complete({ firstName, email, businessName, businessDoes });
     toast.success("Access granted. Opening the library.");
     void navigate({ to: "/library" });
   }
 
   return (
     <Dialog open={open} onOpenChange={(v) => (!v ? close() : null)}>
-      <DialogContent>
+      <DialogContent className="max-h-[min(92vh,44rem)] overflow-y-auto">
         <img
           src="/brand/ebook-stand.jpg"
           alt=""
           width={224}
           height={280}
-          className="mx-auto max-h-32 w-auto object-contain"
+          className="mx-auto max-h-24 w-auto object-contain"
         />
         <DialogTitle>
           {isFree ? "Get the Prompt OS free" : "Get instant access"}
         </DialogTitle>
         <DialogDescription>
           {isFree
-            ? "Register once. Open all 120 prompts in the library immediately."
-            : `One simple payment of ${product.priceLabel}. Immediate digital access.`}
+            ? "For South African business owners and brands. Register once. Open all 120 prompts immediately."
+            : `For South African business owners and brands. One simple payment of ${product.priceLabel}. Immediate digital access.`}
         </DialogDescription>
         <form onSubmit={onSubmit} className="mt-2 grid gap-4">
           <div className="grid gap-2">
@@ -68,7 +70,32 @@ export function CheckoutDialog() {
             />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="co-email">Email address</Label>
+            <Label htmlFor="co-business">Business name</Label>
+            <Input
+              id="co-business"
+              autoComplete="organization"
+              placeholder="e.g. Naidoo Dental or Mabena HVAC"
+              value={businessName}
+              onChange={(e) => setBusinessName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="co-does">What the business does</Label>
+            <Input
+              id="co-does"
+              autoComplete="organization-title"
+              placeholder="e.g. Owner · Sandton dental practice"
+              value={businessDoes}
+              onChange={(e) => setBusinessDoes(e.target.value)}
+              required
+            />
+            <p className="text-xs text-subtle">
+              Built for operators running a real business — not for browsing.
+            </p>
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="co-email">Work email</Label>
             <Input
               id="co-email"
               type="email"

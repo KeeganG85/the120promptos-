@@ -1,7 +1,12 @@
 import { create } from "zustand";
 import { ACCESS_KEY, product } from "@/lib/product";
 
-export type Profile = { firstName: string; email: string };
+export type Profile = {
+  firstName: string;
+  email: string;
+  businessName: string;
+  businessDoes: string;
+};
 
 type CheckoutState = {
   open: boolean;
@@ -48,13 +53,15 @@ export const useCheckout = create<CheckoutState>((set, get) => ({
     try {
       const raw = localStorage.getItem(ACCESS_KEY);
       if (raw) {
-        const parsed = JSON.parse(raw) as { firstName?: string; email?: string };
+        const parsed = JSON.parse(raw) as Partial<Profile> & { email?: string };
         if (parsed?.email) {
           set({
             unlocked: true,
             profile: {
               firstName: parsed.firstName ?? "",
               email: parsed.email,
+              businessName: parsed.businessName ?? "",
+              businessDoes: parsed.businessDoes ?? "",
             },
             ready: true,
           });

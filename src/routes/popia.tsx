@@ -14,7 +14,8 @@ function Popia() {
       </p>
       <h2>Lawful processing</h2>
       <p>
-        We process your name and email to perform the request you made (sample
+        We process your name, work email, business name, and a short description
+        of what the business does to perform the request you made (sample
         prompts or Prompt OS access). Marketing email is a separate, optional
         consent. Boxes are never pre-ticked.
       </p>

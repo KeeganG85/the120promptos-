@@ -10,6 +10,8 @@ import { buildPrompt, getFeatured } from "@/lib/prompts";
 
 export function EmailCapture() {
   const [firstName, setFirstName] = useState("");
+  const [businessName, setBusinessName] = useState("");
+  const [businessDoes, setBusinessDoes] = useState("");
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
   const [marketing, setMarketing] = useState(false);
@@ -25,7 +27,14 @@ export function EmailCapture() {
     try {
       localStorage.setItem(
         SAMPLE_KEY,
-        JSON.stringify({ firstName, email, marketing, at: Date.now() }),
+        JSON.stringify({
+          firstName,
+          businessName,
+          businessDoes,
+          email,
+          marketing,
+          at: Date.now(),
+        }),
       );
     } catch {
       /* ignore */
@@ -38,18 +47,27 @@ export function EmailCapture() {
     <Section raised>
       <div className="grid items-start gap-10 lg:grid-cols-2">
         <div>
-          <Eyebrow>Not ready yet?</Eyebrow>
+          <Eyebrow>Not ready for the full OS?</Eyebrow>
           <H2>Take a few prompts for a test drive.</H2>
           <p className="mt-4 text-muted">
-            Three complete prompts, in your browser, no payment. The full
-            operating system stays one step away.
+            Three complete prompts, in your browser, no payment. Built for
+            South African business owners and brands — tell us who you are so
+            we send the right sample, not a generic pack.
           </p>
         </div>
         {done ? (
           <div className="rounded-xl bg-surface p-6 shadow-[var(--shadow-gold)]">
             <p className="font-display text-lg font-semibold text-fg">
-              {firstName ? `${firstName}, your samples are ready.` : "Your samples are ready."}
+              {firstName
+                ? `${firstName}, your samples are ready.`
+                : "Your samples are ready."}
             </p>
+            {businessName ? (
+              <p className="mt-1 text-sm text-muted">
+                Filed for {businessName}
+                {businessDoes ? ` · ${businessDoes}` : ""}.
+              </p>
+            ) : null}
             <ul className="mt-4 space-y-3">
               {samples.map((p) => (
                 <li key={p.id}>
@@ -84,7 +102,32 @@ export function EmailCapture() {
                 />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="sample-email">Email address</Label>
+                <Label htmlFor="sample-business">Business name</Label>
+                <Input
+                  id="sample-business"
+                  autoComplete="organization"
+                  placeholder="e.g. Naidoo Dental or Mabena HVAC"
+                  value={businessName}
+                  onChange={(e) => setBusinessName(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="sample-does">What the business does</Label>
+                <Input
+                  id="sample-does"
+                  autoComplete="organization-title"
+                  placeholder="e.g. Owner · Sandton dental practice"
+                  value={businessDoes}
+                  onChange={(e) => setBusinessDoes(e.target.value)}
+                  required
+                />
+                <p className="text-xs text-subtle">
+                  Built for operators running a real business — not for browsing.
+                </p>
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="sample-email">Work email</Label>
                 <Input
                   id="sample-email"
                   type="email"

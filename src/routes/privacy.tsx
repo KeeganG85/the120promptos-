@@ -15,9 +15,9 @@ function Privacy() {
       <h2>What we collect</h2>
       <p>
         When you request sample prompts or register for Prompt OS we collect
-        your first name, email address, and the consent you gave. We do not
-        need your identity number, payment card, or client lists to deliver
-        this digital product.
+        your first name, work email, business name, what the business does (or
+        your role in it), and the consent you gave. We do not need your identity
+        number, payment card, or client lists to deliver this digital product.
       </p>
       <h2>Why we collect it</h2>
       <ul>
