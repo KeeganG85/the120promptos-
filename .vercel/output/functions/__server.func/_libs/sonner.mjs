@@ -1,5 +1,5 @@
 import { i as __toESM } from "../_runtime.mjs";
-import { p as require_react_dom, v as require_react } from "./@radix-ui/react-accordion+[...].mjs";
+import { g as require_react_dom, v as require_react } from "./@radix-ui/react-accordion+[...].mjs";
 //#region node_modules/sonner/dist/index.mjs
 var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
 var import_react_dom = /* @__PURE__ */ __toESM(require_react_dom(), 1);

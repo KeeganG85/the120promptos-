@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-DudYBaLW.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-BbkP36Cj.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "/workspace/src/routes/__root.tsx",
@@ -10,54 +10,54 @@ var tsrStartManifest = () => ({ routes: {
 			"/privacy",
 			"/terms"
 		],
-		preloads: ["/assets/index-Dc-D16yY.js"],
+		preloads: ["/assets/index-Mexx35Fz.js"],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-Dc-D16yY.js"
+			src: "/assets/index-Mexx35Fz.js"
 		} }]
 	},
 	"/": {
 		filePath: "/workspace/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-DtS7dd-i.js",
-			"/assets/prompts-mnwkWSr3.js",
-			"/assets/checkout-dialog-SyoQ2Sr-.js"
+			"/assets/routes-D5wI98gj.js",
+			"/assets/checkout-dialog-CKNnum_O.js",
+			"/assets/prompts-BTDa_K6b.js"
 		]
 	},
 	"/contact": {
 		filePath: "/workspace/src/routes/contact.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/contact-DDLvh5jY.js",
-			"/assets/checkout-dialog-SyoQ2Sr-.js",
-			"/assets/legal-layout-DKI5-SBm.js"
+			"/assets/contact-sX0MHuxC.js",
+			"/assets/checkout-dialog-CKNnum_O.js",
+			"/assets/legal-layout-C8ZXuF0L.js"
 		]
 	},
 	"/library": {
 		filePath: "/workspace/src/routes/library.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/library-ocoqPLfB.js",
-			"/assets/prompts-mnwkWSr3.js",
-			"/assets/checkout-dialog-SyoQ2Sr-.js"
+			"/assets/library-BlI8zi5K.js",
+			"/assets/checkout-dialog-CKNnum_O.js",
+			"/assets/prompts-BTDa_K6b.js"
 		]
 	},
 	"/popia": {
 		filePath: "/workspace/src/routes/popia.tsx",
 		children: void 0,
-		preloads: ["/assets/popia-tBt1r7qf.js", "/assets/legal-layout-DKI5-SBm.js"]
+		preloads: ["/assets/popia-PY9MNKi5.js", "/assets/legal-layout-C8ZXuF0L.js"]
 	},
 	"/privacy": {
 		filePath: "/workspace/src/routes/privacy.tsx",
 		children: void 0,
-		preloads: ["/assets/privacy-BDTRJwea.js", "/assets/legal-layout-DKI5-SBm.js"]
+		preloads: ["/assets/privacy-gSWdCmfJ.js", "/assets/legal-layout-C8ZXuF0L.js"]
 	},
 	"/terms": {
 		filePath: "/workspace/src/routes/terms.tsx",
 		children: void 0,
-		preloads: ["/assets/terms-_0zAwudH.js", "/assets/legal-layout-DKI5-SBm.js"]
+		preloads: ["/assets/terms-C4pJeLl4.js", "/assets/legal-layout-C8ZXuF0L.js"]
 	}
 } });
 //#endregion

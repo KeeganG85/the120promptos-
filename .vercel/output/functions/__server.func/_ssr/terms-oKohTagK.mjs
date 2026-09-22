@@ -1,7 +1,7 @@
 import { _ as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
-import { D as product } from "./router-9yJS1AvE.mjs";
-import { t as LegalLayout } from "./legal-layout-DSAz_dKy.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/terms-CSg_XYVu.js
+import { o as product } from "./product-BY13tKKv.mjs";
+import { t as LegalLayout } from "./legal-layout-CqE1ZXNC.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/terms-oKohTagK.js
 var import_jsx_runtime = require_jsx_runtime();
 function Terms() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(LegalLayout, {

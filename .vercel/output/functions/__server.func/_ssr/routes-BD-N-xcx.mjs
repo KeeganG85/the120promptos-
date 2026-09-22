@@ -1,12 +1,13 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { _ as require_jsx_runtime, a as Trigger2, i as Root2, n as Header, r as Item, t as Content2, v as require_react } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { d as useRouterState, v as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { a as Lock, c as Check, l as ArrowRight, s as ChevronDown, u as ArrowDown } from "../_libs/lucide-react.mjs";
+import { i as pricingCtaLabel, n as SAMPLE_KEY, o as product, r as isFree } from "./product-BY13tKKv.mjs";
+import { d as ArrowRight, f as ArrowDown, l as ChevronDown, o as Lock, u as Check } from "../_libs/lucide-react.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { C as SiteFooter, D as product, E as pricingCtaLabel, O as cn, S as Button, T as isFree, _ as structuredPrompt, a as beforeAfter, b as BuyButton, c as faqs, d as genericPrompt, f as howSteps, g as sampleOutput, h as saPoints, i as SiteHeader, l as forYou, m as pricingPoints, n as MobileStickyCta, o as categoriesMeta, p as notForYou, r as ScrollProgress, s as compliance, u as foundStages, v as trustChips, w as SAMPLE_KEY, y as valueStack } from "./router-9yJS1AvE.mjs";
-import { n as Input, r as Label, t as CheckoutDialog } from "./checkout-dialog-ictOi8KS.mjs";
+import { C as SiteFooter, S as Button, _ as structuredPrompt, a as beforeAfter, b as BuyButton, c as faqs, d as genericPrompt, f as howSteps, g as sampleOutput, h as saPoints, i as SiteHeader, l as forYou, m as pricingPoints, n as MobileStickyCta, o as categoriesMeta, p as notForYou, r as ScrollProgress, s as compliance, u as foundStages, v as trustChips, w as cn, y as valueStack } from "./router-DCdSzdw5.mjs";
+import { n as Input, r as Label, t as CheckoutDialog } from "./checkout-dialog-DBNpWwij.mjs";
 import { i as promptsByCategory, n as getFeatured, r as prompts, t as buildPrompt } from "./prompts-BidtSfwv.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BslDHa_I.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BD-N-xcx.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function Reveal({ children, className, delay = 0 }) {
@@ -246,6 +247,8 @@ function Demonstration() {
 }
 function EmailCapture() {
 	const [firstName, setFirstName] = (0, import_react.useState)("");
+	const [businessName, setBusinessName] = (0, import_react.useState)("");
+	const [businessDoes, setBusinessDoes] = (0, import_react.useState)("");
 	const [email, setEmail] = (0, import_react.useState)("");
 	const [consent, setConsent] = (0, import_react.useState)(false);
 	const [marketing, setMarketing] = (0, import_react.useState)(false);
@@ -260,6 +263,8 @@ function EmailCapture() {
 		try {
 			localStorage.setItem(SAMPLE_KEY, JSON.stringify({
 				firstName,
+				businessName,
+				businessDoes,
 				email,
 				marketing,
 				at: Date.now()
@@ -273,29 +278,41 @@ function EmailCapture() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "grid items-start gap-10 lg:grid-cols-2",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Eyebrow, { children: "Not ready yet?" }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Eyebrow, { children: "Not ready for the full OS?" }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(H2, { children: "Take a few prompts for a test drive." }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-4 text-muted",
-					children: "Three complete prompts, in your browser, no payment. The full operating system stays one step away."
+					children: "Three complete prompts, in your browser, no payment. Built for South African business owners and brands — tell us who you are so we send the right sample, not a generic pack."
 				})
 			] }), done ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "rounded-xl bg-surface p-6 shadow-[var(--shadow-gold)]",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "font-display text-lg font-semibold text-fg",
-					children: firstName ? `${firstName}, your samples are ready.` : "Your samples are ready."
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
-					className: "mt-4 space-y-3",
-					children: samples.map((p) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-						type: "button",
-						className: "w-full rounded-md bg-bg px-3 py-3 text-left text-sm text-fg shadow-[var(--shadow-border)] hover:shadow-[var(--shadow-gold)]",
-						onClick: () => {
-							navigator.clipboard.writeText(buildPrompt(p));
-							toast.success("Copied. Paste into ChatGPT, Claude or Gemini.");
-						},
-						children: ["Copy · ", p.title]
-					}) }, p.id))
-				})]
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "font-display text-lg font-semibold text-fg",
+						children: firstName ? `${firstName}, your samples are ready.` : "Your samples are ready."
+					}),
+					businessName ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+						className: "mt-1 text-sm text-muted",
+						children: [
+							"Filed for ",
+							businessName,
+							businessDoes ? ` · ${businessDoes}` : "",
+							"."
+						]
+					}) : null,
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+						className: "mt-4 space-y-3",
+						children: samples.map((p) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+							type: "button",
+							className: "w-full rounded-md bg-bg px-3 py-3 text-left text-sm text-fg shadow-[var(--shadow-border)] hover:shadow-[var(--shadow-gold)]",
+							onClick: () => {
+								navigator.clipboard.writeText(buildPrompt(p));
+								toast.success("Copied. Paste into ChatGPT, Claude or Gemini.");
+							},
+							children: ["Copy · ", p.title]
+						}) }, p.id))
+					})
+				]
 			}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("form", {
 				onSubmit,
 				className: "rounded-xl bg-surface p-6 shadow-[var(--shadow-border)]",
@@ -318,8 +335,43 @@ function EmailCapture() {
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "grid gap-2",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
+								htmlFor: "sample-business",
+								children: "Business name"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								id: "sample-business",
+								autoComplete: "organization",
+								placeholder: "e.g. Naidoo Dental or Mabena HVAC",
+								value: businessName,
+								onChange: (e) => setBusinessName(e.target.value),
+								required: true
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "grid gap-2",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
+									htmlFor: "sample-does",
+									children: "What the business does"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+									id: "sample-does",
+									autoComplete: "organization-title",
+									placeholder: "e.g. Owner · Sandton dental practice",
+									value: businessDoes,
+									onChange: (e) => setBusinessDoes(e.target.value),
+									required: true
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "text-xs text-subtle",
+									children: "Built for operators running a real business — not for browsing."
+								})
+							]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "grid gap-2",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
 								htmlFor: "sample-email",
-								children: "Email address"
+								children: "Work email"
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
 								id: "sample-email",
 								type: "email",
@@ -441,19 +493,19 @@ function FinalCta() {
 			className: "pointer-events-none absolute inset-0",
 			style: { background: "radial-gradient(ellipse 50% 60% at 20% 80%, color-mix(in oklab, var(--color-gold) 16%, transparent), transparent 70%)" }
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "relative mx-auto grid max-w-6xl items-end gap-8 lg:grid-cols-12",
+			className: "relative mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-12",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "flex justify-center lg:col-span-5",
+				className: "lg:col-span-6",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-					src: "/brand/bee-cutout.png",
-					alt: "BuzzCraft bee mascot in a white shirt and glasses, standing with hands in pockets",
-					width: 819,
-					height: 1066,
+					src: "/brand/bee-casual-lockup.jpg",
+					alt: "BuzzCraft bee mascot in a white shirt and denim shorts standing beside The 120 Prompt OS hardcover",
+					width: 1568,
+					height: 1003,
 					loading: "lazy",
-					className: "max-h-64 w-auto object-contain drop-shadow-[0_24px_40px_rgb(0_0_0_/_0.55)] sm:max-h-80 lg:max-h-[28rem]"
+					className: "w-full rounded-xl"
 				})
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "pb-4 text-center lg:col-span-7 lg:pb-16 lg:text-left",
+				className: "text-center lg:col-span-6 lg:text-left",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 						className: "font-display text-4xl font-semibold tracking-[-0.03em] text-fg md:text-6xl",
@@ -560,12 +612,12 @@ function Found() {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mt-16 grid items-center gap-10 lg:grid-cols-2",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-					src: "/brand/bee-systems.png",
-					alt: "BuzzCraft mascot at a strategy board: we build growth systems, not marketing noise",
-					width: 900,
-					height: 1100,
+					src: "/brand/ebook-stand.jpg",
+					alt: "BuzzCraft bee mascot presenting The 120 Prompt OS hardcover",
+					width: 1122,
+					height: 1402,
 					loading: "lazy",
-					className: "mx-auto max-h-[28rem] w-full rounded-xl object-cover object-top shadow-[var(--shadow-gold)] lg:max-h-none"
+					className: "mx-auto max-h-[28rem] w-full rounded-xl object-cover object-[center_20%] shadow-[var(--shadow-gold)] lg:max-h-[36rem]"
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "font-display text-2xl font-semibold text-fg md:text-3xl",
@@ -702,9 +754,9 @@ function Hero() {
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 								src: "/brand/hero-lockup.jpg",
-								alt: "BuzzCraft bee mascot standing beside the 120 Prompt OS hardcover, gold B glowing behind them",
-								width: 1728,
-								height: 1152,
+								alt: "BuzzCraft bee mascot in a suit standing beside The 120 Prompt OS hardcover and a gold 3D B",
+								width: 1568,
+								height: 1003,
 								fetchPriority: "high",
 								className: "relative z-10 w-full rounded-xl"
 							}),
@@ -1221,9 +1273,9 @@ function ValueStack() {
 				className: "lg:col-span-5",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 					src: "/brand/ebook-open.jpg",
-					alt: "The 120 Prompt OS hardcover open on a desk, gold-edged pages catching the light",
-					width: 900,
-					height: 1200,
+					alt: "BuzzCraft bee reading The 120 Prompt OS, open to Purpose and Prompt pages",
+					width: 1448,
+					height: 1086,
 					loading: "lazy",
 					className: "mx-auto max-h-[26rem] w-full rounded-xl object-cover object-center"
 				})
@@ -1253,9 +1305,9 @@ function Pricing() {
 			className: "mx-auto grid max-w-3xl items-center gap-8 rounded-2xl bg-surface p-8 shadow-[var(--shadow-gold)] md:grid-cols-[14rem_1fr] md:p-10",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 				src: "/brand/ebook-stand.jpg",
-				alt: "The 120 Prompt OS hardcover standing in gold studio light",
-				width: 1152,
-				height: 1728,
+				alt: "BuzzCraft bee mascot presenting The 120 Prompt OS hardcover",
+				width: 1122,
+				height: 1402,
 				loading: "lazy",
 				className: "mx-auto max-h-56 w-auto object-contain md:max-h-72"
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [

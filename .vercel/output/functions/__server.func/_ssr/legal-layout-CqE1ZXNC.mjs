@@ -1,7 +1,7 @@
 import { _ as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
-import { C as SiteFooter, i as SiteHeader } from "./router-9yJS1AvE.mjs";
-import { t as CheckoutDialog } from "./checkout-dialog-ictOi8KS.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/legal-layout-DSAz_dKy.js
+import { C as SiteFooter, i as SiteHeader } from "./router-DCdSzdw5.mjs";
+import { t as CheckoutDialog } from "./checkout-dialog-DBNpWwij.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/legal-layout-CqE1ZXNC.js
 var import_jsx_runtime = require_jsx_runtime();
 function LegalLayout({ title, children }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [

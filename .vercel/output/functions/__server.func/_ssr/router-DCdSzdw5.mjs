@@ -1,13 +1,14 @@
 import { i as __toESM } from "../_runtime.mjs";
-import { _ as require_jsx_runtime, m as Slot, v as require_react } from "../_libs/@radix-ui/react-accordion+[...].mjs";
+import { _ as require_jsx_runtime, p as Slot, v as require_react } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { _ as createRootRoute, b as useRouter, g as createFileRoute, h as lazyRouteComponent, l as Scripts, m as Outlet, p as createRouter, u as HeadContent, v as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { i as Menu, l as ArrowRight, n as TriangleAlert, t as X } from "../_libs/lucide-react.mjs";
+import { a as primaryCtaLabel, o as product, t as ACCESS_KEY } from "./product-BY13tKKv.mjs";
+import { a as Mail, d as ArrowRight, i as Menu, n as TriangleAlert, s as Globe, t as X } from "../_libs/lucide-react.mjs";
 import { a as union, i as string, n as number, r as object, t as literal } from "../_libs/zod.mjs";
 import { n as clsx, t as cva } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { t as create } from "../_libs/zustand.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-9yJS1AvE.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DCdSzdw5.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -289,55 +290,42 @@ function PreviewHostBridge() {
 function cn(...inputs) {
 	return twMerge(clsx(inputs));
 }
-function Logo({ className, compact = false }) {
+function Logo({ className, compact = false, wordmarkHref }) {
+	const mark = /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+		src: "/brand/mark.png",
+		alt: "",
+		width: 36,
+		height: 36,
+		className: "size-9 rounded-full shadow-[var(--shadow-gold)]"
+	});
+	const wordmark = compact ? null : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+		src: "/brand/wordmark.png",
+		alt: "",
+		width: 160,
+		height: 26,
+		className: "h-[1.05rem] w-[6.5rem] shrink-0 object-contain object-left md:h-5 md:w-[7.75rem]"
+	});
+	if (wordmarkHref && wordmark) return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+		className: cn("inline-flex min-w-0 shrink-0 items-center gap-2.5", className),
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+			to: "/",
+			className: "inline-flex shrink-0",
+			"aria-label": "Prompt OS home",
+			children: mark
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+			href: wordmarkHref,
+			className: "inline-flex shrink-0",
+			"aria-label": "BuzzCraft website",
+			children: wordmark
+		})]
+	});
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
 		to: "/",
 		className: cn("inline-flex min-w-0 shrink-0 items-center gap-2.5", className),
 		"aria-label": "BuzzCraft home",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-			src: "/brand/mark.png",
-			alt: "",
-			width: 36,
-			height: 36,
-			className: "size-9 rounded-full shadow-[var(--shadow-gold)]"
-		}), compact ? null : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-			src: "/brand/wordmark.png",
-			alt: "",
-			width: 160,
-			height: 26,
-			className: "h-[1.05rem] w-[6.5rem] shrink-0 object-contain object-left md:h-5 md:w-[7.75rem]"
-		})]
+		children: [mark, wordmark]
 	});
 }
-/**
-* Single commercial config for the landing page.
-* Set `priceLabel` to a display string such as "R497" when pricing is ready.
-* Leave it null to run in free / registration mode — CTAs switch automatically.
-* Set `checkoutUrl` to an external checkout (PayFast, Lemon Squeezy, etc.)
-* to send buyers off-site instead of the in-page access form.
-*/
-var product = {
-	name: "The 120 Prompt OS",
-	shortName: "Prompt OS",
-	brand: "BuzzCraft",
-	tagline: "Crafting Buzz. Creating Impact.",
-	url: "https://www.buzzcraft.co.za",
-	email: "info@buzzcraft.co.za",
-	location: "Johannesburg, South Africa",
-	priceLabel: null,
-	checkoutUrl: null,
-	title: "The 120 Prompt OS | AI Prompts for South African Businesses | BuzzCraft",
-	description: "120 practical AI prompts for South African business owners covering SEO, AI visibility, marketing, sales, automation, strategy and operations. Built by BuzzCraft."
-};
-var isFree = product.priceLabel == null;
-function primaryCtaLabel() {
-	return isFree ? "Get the Prompt OS free" : "Get the 120 Prompt OS";
-}
-function pricingCtaLabel() {
-	return isFree ? "Get the Prompt OS free" : `Get instant access — ${product.priceLabel}`;
-}
-var ACCESS_KEY = "buzzcraft-promptos-access";
-var SAMPLE_KEY = "buzzcraft-promptos-sample";
 var links = [
 	{
 		to: "/",
@@ -373,29 +361,36 @@ function SiteFooter() {
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "md:col-span-5",
 				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Logo, {}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Logo, { wordmarkHref: product.url }),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "mt-4 max-w-sm text-sm text-muted",
 						children: product.tagline
 					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "mt-6 text-sm text-subtle",
-						children: [
-							product.location,
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-								className: "text-gold hover:underline",
-								href: `mailto:${product.email}`,
-								children: product.email
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-								className: "text-gold hover:underline",
-								href: product.url,
-								rel: "noreferrer",
-								children: "www.buzzcraft.co.za"
+						children: product.location
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "mt-4 flex items-center gap-2",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+							href: `mailto:${product.email}`,
+							"aria-label": `Email ${product.email}`,
+							title: product.email,
+							className: "inline-flex size-10 items-center justify-center rounded-md text-gold shadow-[var(--shadow-border)] transition-shadow hover:shadow-[var(--shadow-gold)]",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, {
+								className: "size-4",
+								"aria-hidden": true
 							})
-						]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+							href: product.url,
+							"aria-label": "BuzzCraft website, www.buzzcraft.co.za",
+							title: "www.buzzcraft.co.za",
+							className: "inline-flex size-10 items-center justify-center rounded-md text-gold shadow-[var(--shadow-border)] transition-shadow hover:shadow-[var(--shadow-gold)]",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Globe, {
+								className: "size-4",
+								"aria-hidden": true
+							})
+						})]
 					})
 				]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -500,7 +495,9 @@ var useCheckout = create((set, get) => ({
 						unlocked: true,
 						profile: {
 							firstName: parsed.firstName ?? "",
-							email: parsed.email
+							email: parsed.email,
+							businessName: parsed.businessName ?? "",
+							businessDoes: parsed.businessDoes ?? ""
 						},
 						ready: true
 					});
@@ -989,7 +986,7 @@ function NotFound() {
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteFooter, {})
 	] });
 }
-var styles_default = "/assets/styles-DuiFPTts.css";
+var styles_default = "/assets/styles-BypkQNsL.css";
 var Route$6 = createRootRoute({
 	head: () => ({
 		meta: [
@@ -1080,17 +1077,17 @@ var Route$6 = createRootRoute({
 		})]
 	})
 });
-var $$splitComponentImporter$5 = () => import("./routes-BslDHa_I.mjs");
+var $$splitComponentImporter$5 = () => import("./routes-BD-N-xcx.mjs");
 var Route$5 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$5, "component") });
-var $$splitComponentImporter$4 = () => import("./contact-C0O__qyx.mjs");
+var $$splitComponentImporter$4 = () => import("./contact-CSXEdEXE.mjs");
 var Route$4 = createFileRoute("/contact")({ component: lazyRouteComponent($$splitComponentImporter$4, "component") });
-var $$splitComponentImporter$3 = () => import("./library-q8H6i1Ud.mjs");
+var $$splitComponentImporter$3 = () => import("./library-EsTgQxRv.mjs");
 var Route$3 = createFileRoute("/library")({ component: lazyRouteComponent($$splitComponentImporter$3, "component") });
-var $$splitComponentImporter$2 = () => import("./popia-Plc0xcvE.mjs");
+var $$splitComponentImporter$2 = () => import("./popia-BkXCY-Ak.mjs");
 var Route$2 = createFileRoute("/popia")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
-var $$splitComponentImporter$1 = () => import("./privacy-BncuEPLT.mjs");
+var $$splitComponentImporter$1 = () => import("./privacy-BeEdnFQb.mjs");
 var Route$1 = createFileRoute("/privacy")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./terms-CSg_XYVu.mjs");
+var $$splitComponentImporter = () => import("./terms-oKohTagK.mjs");
 var Route = createFileRoute("/terms")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var rootRouteChildren = {
 	IndexRoute: Route$5.update({
@@ -1133,4 +1130,4 @@ function getRouter() {
 	});
 }
 //#endregion
-export { SiteFooter as C, product as D, pricingCtaLabel as E, cn as O, Button as S, isFree as T, structuredPrompt as _, beforeAfter as a, BuyButton as b, faqs as c, genericPrompt as d, howSteps as f, sampleOutput as g, saPoints as h, SiteHeader as i, forYou as l, pricingPoints as m, MobileStickyCta as n, categoriesMeta as o, notForYou as p, ScrollProgress as r, compliance as s, router_exports as t, foundStages as u, trustChips as v, SAMPLE_KEY as w, useCheckout as x, valueStack as y };
+export { SiteFooter as C, Button as S, structuredPrompt as _, beforeAfter as a, BuyButton as b, faqs as c, genericPrompt as d, howSteps as f, sampleOutput as g, saPoints as h, SiteHeader as i, forYou as l, pricingPoints as m, MobileStickyCta as n, categoriesMeta as o, notForYou as p, ScrollProgress as r, compliance as s, router_exports as t, foundStages as u, trustChips as v, cn as w, useCheckout as x, valueStack as y };

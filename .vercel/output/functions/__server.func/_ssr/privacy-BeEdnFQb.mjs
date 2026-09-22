@@ -1,7 +1,7 @@
 import { _ as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
-import { D as product } from "./router-9yJS1AvE.mjs";
-import { t as LegalLayout } from "./legal-layout-DSAz_dKy.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/privacy-BncuEPLT.js
+import { o as product } from "./product-BY13tKKv.mjs";
+import { t as LegalLayout } from "./legal-layout-CqE1ZXNC.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/privacy-BeEdnFQb.js
 var import_jsx_runtime = require_jsx_runtime();
 function Privacy() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(LegalLayout, {
@@ -9,7 +9,7 @@ function Privacy() {
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "BuzzCraft (“we”) is based in Johannesburg, South Africa. This notice explains how we handle personal information collected through The 120 Prompt OS website and library." }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "What we collect" }),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "When you request sample prompts or register for Prompt OS we collect your first name, email address, and the consent you gave. We do not need your identity number, payment card, or client lists to deliver this digital product." }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "When you request sample prompts or register for Prompt OS we collect your first name, work email, business name, what the business does (or your role in it), and the consent you gave. We do not need your identity number, payment card, or client lists to deliver this digital product." }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "Why we collect it" }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", { children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "To deliver the product or sample you asked for." }),
@@ -21,7 +21,7 @@ function Privacy() {
 				] })
 			] }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "Where it lives" }),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "On this preview, registration is stored in your own browser so you can reopen the library. When BuzzCraft runs production checkout, records will sit with our processors under contracts that match this notice." }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "On this site, registration is emailed to BuzzCraft and recorded in our lead spreadsheet (first name, business name, business email, what the business does, and the consent you gave). A copy also stays in your browser so you can reopen the library on this device." }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "Your rights" }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
 				"You may ask what we hold, correct it, or request deletion, subject to POPIA. Write to ",
