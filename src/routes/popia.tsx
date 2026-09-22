@@ -16,8 +16,9 @@ function Popia() {
       <p>
         We process your name, work email, business name, and a short description
         of what the business does to perform the request you made (sample
-        prompts or Prompt OS access). Marketing email is a separate, optional
-        consent. Boxes are never pre-ticked.
+        prompts or Prompt OS access). Registration is emailed to BuzzCraft and
+        stored in a Google Sheet we control. Marketing email is a separate,
+        optional consent. Boxes are never pre-ticked.
       </p>
       <h2>What we ask you not to paste into AI</h2>
       <p>

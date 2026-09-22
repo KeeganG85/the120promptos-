@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Globe, Mail } from "lucide-react";
 import { Logo } from "@/components/landing/logo";
 import { product } from "@/lib/product";
 
@@ -17,23 +18,27 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-bg-elevated px-5 pt-16 pb-28 md:px-8 md:pb-16">
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-12">
         <div className="md:col-span-5">
-          <Logo />
+          <Logo wordmarkHref={product.url} />
           <p className="mt-4 max-w-sm text-sm text-muted">{product.tagline}</p>
-          <p className="mt-6 text-sm text-subtle">
-            {product.location}
-            <br />
-            <a className="text-gold hover:underline" href={`mailto:${product.email}`}>
-              {product.email}
-            </a>
-            <br />
+          <p className="mt-6 text-sm text-subtle">{product.location}</p>
+          <div className="mt-4 flex items-center gap-2">
             <a
-              className="text-gold hover:underline"
-              href={product.url}
-              rel="noreferrer"
+              href={`mailto:${product.email}`}
+              aria-label={`Email ${product.email}`}
+              title={product.email}
+              className="inline-flex size-10 items-center justify-center rounded-md text-gold shadow-[var(--shadow-border)] transition-shadow hover:shadow-[var(--shadow-gold)]"
             >
-              www.buzzcraft.co.za
+              <Mail className="size-4" aria-hidden />
             </a>
-          </p>
+            <a
+              href={product.url}
+              aria-label="BuzzCraft website, www.buzzcraft.co.za"
+              title="www.buzzcraft.co.za"
+              className="inline-flex size-10 items-center justify-center rounded-md text-gold shadow-[var(--shadow-border)] transition-shadow hover:shadow-[var(--shadow-gold)]"
+            >
+              <Globe className="size-4" aria-hidden />
+            </a>
+          </div>
         </div>
         <div className="md:col-span-7 md:flex md:justify-end">
           <nav className="grid grid-cols-2 gap-x-10 gap-y-3 text-sm sm:grid-cols-3">

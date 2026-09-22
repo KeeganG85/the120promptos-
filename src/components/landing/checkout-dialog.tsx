@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useCheckout } from "@/lib/checkout-store";
 import { isFree, pricingCtaLabel, product } from "@/lib/product";
+import { submitLead } from "@/lib/submit-lead";
 
 export function CheckoutDialog() {
   const open = useCheckout((s) => s.open);
@@ -24,20 +25,37 @@ export function CheckoutDialog() {
   const [businessDoes, setBusinessDoes] = useState("");
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
+  const [sending, setSending] = useState(false);
 
   useEffect(() => {
     hydrate();
   }, [hydrate]);
 
-  function onSubmit(e: FormEvent) {
+  async function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (!consent) {
       toast.error("Please confirm you want instant access to Prompt OS.");
       return;
     }
-    complete({ firstName, email, businessName, businessDoes });
-    toast.success("Access granted. Opening the library.");
-    void navigate({ to: "/library" });
+    setSending(true);
+    try {
+      const result = await submitLead({
+        data: { firstName, businessName, businessDoes, email, consent: true },
+      });
+      complete({ firstName, email, businessName, businessDoes });
+      if (result.emailed) {
+        toast.success("Access granted. Opening the library.");
+      } else {
+        toast.message("Library open. We couldn't send the registration notice.", {
+          description: `Email ${product.email} if you don't hear back.`,
+        });
+      }
+      void navigate({ to: "/library" });
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Could not submit. Try again.");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -111,6 +129,7 @@ export function CheckoutDialog() {
               className="mt-1 size-4 shrink-0 accent-gold"
               checked={consent}
               onChange={(e) => setConsent(e.target.checked)}
+              required
             />
             <span>
               I want instant access to The 120 Prompt OS and agree that BuzzCraft
@@ -125,8 +144,8 @@ export function CheckoutDialog() {
               .
             </span>
           </label>
-          <Button type="submit" size="lg">
-            {pricingCtaLabel()}
+          <Button type="submit" size="lg" disabled={sending}>
+            {sending ? "Sending…" : pricingCtaLabel()}
           </Button>
           <p className="text-center text-xs text-subtle">
             Johannesburg · {product.email} · No fake timers

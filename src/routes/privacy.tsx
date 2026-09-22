@@ -30,9 +30,10 @@ function Privacy() {
       </ul>
       <h2>Where it lives</h2>
       <p>
-        On this preview, registration is stored in your own browser so you can
-        reopen the library. When BuzzCraft runs production checkout, records
-        will sit with our processors under contracts that match this notice.
+        On this site, registration is emailed to BuzzCraft and recorded in our
+        lead spreadsheet (first name, business name, business email, what the
+        business does, and the consent you gave). A copy also stays in your
+        browser so you can reopen the library on this device.
       </p>
       <h2>Your rights</h2>
       <p>
