@@ -39,6 +39,13 @@ export function SiteFooter() {
               <Globe className="size-4" aria-hidden />
             </a>
           </div>
+          <a
+            href="/BuzzCraft-One-Pager.pdf"
+            download
+            className="mt-4 inline-block text-sm text-gold underline underline-offset-2 hover:text-gold/80"
+          >
+            Download the BuzzCraft One-Pager (PDF)
+          </a>
         </div>
         <div className="md:col-span-7 md:flex md:justify-end">
           <nav className="grid grid-cols-2 gap-x-10 gap-y-3 text-sm sm:grid-cols-3">
