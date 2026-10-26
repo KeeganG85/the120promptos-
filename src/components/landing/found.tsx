@@ -110,7 +110,16 @@ export function Found() {
             by AI, nudged to act, done by systems. That is the work — not
             another week of random posts.
           </p>
-          <BuyButton source="found" className="mt-8" size="lg" />
+          <div className="mt-8 flex flex-wrap gap-4">
+            <BuyButton source="found" size="lg" />
+            <a
+              href="/BuzzCraft-One-Pager.pdf"
+              download
+              className="inline-flex items-center justify-center rounded-md border border-gold px-6 py-3 text-sm font-semibold text-gold transition-colors hover:bg-gold/10"
+            >
+              Download one-pager
+            </a>
+          </div>
         </div>
       </div>
     </Section>
